@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isPalindrome(string s) {
          
-        string r="";
+        string r="";//
         
         
         for (char c: s){
