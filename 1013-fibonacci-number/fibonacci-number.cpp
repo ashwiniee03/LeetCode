@@ -1,7 +1,7 @@
 class Solution {
 public:
     int fib(int n) {
-         if (n == 0) return 0;  // ✅ Handle n = 0
+         if (n == 0) return 0;  
          if (n == 1) return 1; 
         vector<int> v(n+1);
         v[0]=0; v[1]=1;
