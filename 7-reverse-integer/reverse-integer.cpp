@@ -8,7 +8,7 @@ public:
         d= x%10;
 
         nn= nn*10 +d;
-        if ( !(INT_MIN<=nn &&  nn<= INT_MAX)){
+        if ( !(INT_MIN<=nn &&  nn<= INT_MAX)){ //constraints
             return 0;
         }
 
