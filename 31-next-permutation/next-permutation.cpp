@@ -14,15 +14,15 @@ public:
             reverse(nums.begin() , nums.end());
         }else{
             int key= b-1;
-            int c=INT_MAX;
+            int c;
             int pos;
-            for (int j= key+1 ; j<n; j++){
-                if (nums[j]>nums[key] && nums[j]<c){
-                    c= nums[j];
-                    pos=j;
+            for (int j= n-1 ; j>key ; j--){
+                if (nums[j]>nums[key]){
+                    c= j;
+                    break;
                 }
             }
-            swap(nums[key] , nums[pos]);
+            swap(nums[key] ,nums[c]);
             sort(nums.begin()+key+1 , nums.end());
         }
 
