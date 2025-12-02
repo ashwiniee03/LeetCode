@@ -7,22 +7,18 @@ class Solution(object):
 
         INT32_MIN = -2**31
         INT32_MAX = 2**31 - 1
-        n=x
+        m= abs(x)
         neg_flag= False
-        if (n==0): return 0
-        if (n<0):
-            neg_flag= True
-            n= n*(-1)
-        
+   
         rev_num=0
-        while(n>0):
-            d= n%10
+        while(m>0):
+            d= m%10
             rev_num= rev_num*10+ d
             if (INT32_MAX< rev_num or rev_num< INT32_MIN): return 0
-            n=n//10
+            m=m//10
 
-        if (neg_flag):
-            return rev_num*-1
+        if (x>0): return rev_num
+        else: return (-1*rev_num)
         
         return rev_num
         
