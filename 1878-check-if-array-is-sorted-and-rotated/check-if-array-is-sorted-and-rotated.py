@@ -1,12 +1,11 @@
 class Solution(object):
     def check(self, nums):
+        n= len(nums)
         ans=0
-        for i in range(len(nums)-1):
-            if (nums[i]>nums[i+1]):
+        for i in range(n):
+            if (nums[i]>nums[(i+1)%n]):
                 ans+=1
 
-        if (nums[0]<nums[len(nums)-1]):
-            ans+=1
         if (ans>1):
             return False
         else:
