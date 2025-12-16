@@ -5,20 +5,20 @@ class Solution(object):
         :rtype: None Do not return anything, modify nums in-place instead.
         """
         n= len(nums)
-        i=0
-        j=i+1
+        i=-1
+        for k in range(n):
+            if nums[k]==0:
+                i=k
+                break
 
-        while(j<n):
-            if (nums[i]==0):
-                if (nums[j]!=0):
-                    nums[i], nums[j]= nums[j], nums[i]
-                    i+=1
-                    j+=1
-                else:
-                    j+=1
-
-            else:
+        if (i==-1): return
+        
+        for k in range(i+1,n):
+            if (nums[k]!=0):
+                nums[k], nums[i]= nums[i], nums[k]
                 i+=1
-                j+=1        
+            
+
+        
         
         
