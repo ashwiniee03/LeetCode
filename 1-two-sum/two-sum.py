@@ -8,12 +8,15 @@ class Solution(object):
         ans=[]
 
         n= len(nums)
-        for i in range(n):
-            for j in range (i+1,n):
-                if (nums[i]+nums[j]== target):
-                    ans.append (i)
-                    ans.append (j)
-                    return ans
+        hash_map= {}
+        for i in range (n):
+            hash_map[nums[i]]= i
 
+        for i in range (n):
+            key =target - nums[i]
+            if ((key) in hash_map and i!= hash_map[key] ):
+                ans.append(i)
+                ans.append(hash_map[target - nums[i]])
+                return ans
 
         
