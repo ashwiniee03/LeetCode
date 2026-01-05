@@ -13,8 +13,7 @@ class Solution(object):
                 if (nums[i]+nums[j]== target):
                     ans.append (i)
                     ans.append (j)
-
-        return ans
+                    return ans
 
 
         
