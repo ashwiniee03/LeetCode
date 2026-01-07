@@ -4,19 +4,27 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        count_dict= {0:0, 1:0, 2:0}
         n= len(nums)
-        for i in nums:
-            count_dict[i]= count_dict[i]+1
-        
-        j=0
-        
-        for i in count_dict:
-            for k in range (count_dict[i]):
-                nums[j]= i
-                j+=1
+        mid=0
+        low=0
+        high=n-1
+        while (mid <=high):
+
+            if (nums[mid]==0):
+                nums[mid], nums[low]= nums[low], nums[mid]
+                low+=1
+                mid+=1
+
+            elif (nums[mid]==1):
+                mid+=1
+
+            elif (nums[mid]==2):
+                nums[mid], nums[high]= nums[high], nums[mid]
+                high-=1
 
         return nums
+
+
 
 
 
