@@ -4,11 +4,20 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        n= len(nums)
-        hash_map={}
-        for i in range (n):
-            hash_map[nums[i]]= hash_map.get(nums[i], 0)+1
+        ch=nums[0]      
+        c= 1
 
-        for i in range (n):
-            if ((hash_map[nums[i]])> (n/2)):
-                return nums[i]        
+        for i in range (1, len (nums)):
+            if (ch== nums[i]):
+                c+=1 
+            
+            if (ch != nums[i]):
+                if (c>0):
+                    c-=1
+                else:
+                    c=1
+                    ch=nums[i]
+
+        return ch
+
+                
