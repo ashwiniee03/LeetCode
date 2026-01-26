@@ -1,15 +1,20 @@
 class Solution(object):
     def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         n= len(nums)
-        p1=0
-        p2=1
-        while(p2< n):
-            if (nums[p1]!= nums[p2]):
-                nums[p1+1]= nums[p2]
-                p1+=1
-                p2+=1
+        if (n<=1):
+            return n
+        i=0
+        j=1
+        while(j<= n-1):
+            if (nums[i]== nums[j]):
+                j+=1
             else:
-                p2+=1
-        return p1+1
+                nums[i+1]= nums[j]
+                i+=1
+                j+=1
 
-        
+        return i+1
