@@ -4,13 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
         n= len (nums)
-        sum_of_nums= (n*(n+1))/2
-        sum=0
-
+        s=0
         for i in nums:
-            sum+=i
-        
-        return (sum_of_nums - sum)
+            s+=i
+        return ((n*(n+1))/2) -s
         
