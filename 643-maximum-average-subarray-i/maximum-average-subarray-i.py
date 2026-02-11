@@ -5,47 +5,16 @@ class Solution(object):
         :type k: int
         :rtype: float
         """
-        max_sum = float('-inf')
-        start=0
-        n= len(nums)
-        s=0
-        c=0
-        j=0
-        i=0
+        n=len(nums)
+        p=0
+        window_sum = sum(nums[:k])
+        max_sum=window_sum
+        for i in range (k,n):
 
-        while(j<n):
-            
-            if (c==k):
-                if (s>max_sum):
-                    max_sum=s
-                    start=i
+            window_sum-= nums[p]
+            p+=1
+            window_sum+=  nums[i]
 
-                s-=nums[i]
-                c-=1
-                i+=1
-
-            else:
-                s+= nums[j]
-                c+=1
-                j+=1
-
-        if (c==k):
-                if (s>max_sum):
-                    max_sum=s
-                    start=i
-
-                s-=nums[i]
-                c-=1
-                i+=1
+            max_sum= max(max_sum, window_sum)
 
         return max_sum/float(k)
-
-            
-
-
-
-
-
-
-
-        
