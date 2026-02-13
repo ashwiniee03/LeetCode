@@ -10,13 +10,14 @@ class Solution(object):
         n= len(nums)
         hash_map= {}
         for i in range (n):
-            hash_map[nums[i]]= i
-
-        for i in range (n):
-            key =target - nums[i]
-            if ((key) in hash_map and i!= hash_map[key] ):
+            rem=target-nums[i]
+            if rem in hash_map:
                 ans.append(i)
-                ans.append(hash_map[target - nums[i]])
+                ans.append(hash_map[rem])
                 return ans
+
+            hash_map[nums[i]] = i
+
+            
 
         
