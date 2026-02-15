@@ -4,15 +4,19 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        n= len(nums)
-        max_sum= -sys.maxsize -1
-        current_sum= 0
-        for i in nums:
-            current_sum+= i
-            max_sum= max(max_sum, current_sum)
 
-            if (current_sum<0):
-                current_sum= 0
+        s=0
+        max_sum= float('-inf')
+        n= len(nums)
+
+        for i in range (n):
+            s+= nums[i]
+
+            max_sum= max (s, max_sum)
+            
+            if (s<0):
+                s=0
 
         return max_sum
+        
                 
