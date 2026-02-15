@@ -4,20 +4,21 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        ch=nums[0]      
-        c= 1
+        c=0
+        e=0
+        n= len(nums)
 
-        for i in range (1, len (nums)):
-            if (ch== nums[i]):
-                c+=1 
-            
-            if (ch != nums[i]):
-                if (c>0):
-                    c-=1
+        for i in range (n):
+            if (c==0):
+                c=1
+                e=nums[i]
+
+            else:
+                if (nums[i]== e):
+                    c+=1
                 else:
-                    c=1
-                    ch=nums[i]
+                    c-=1
 
-        return ch
+        return e
 
                 
