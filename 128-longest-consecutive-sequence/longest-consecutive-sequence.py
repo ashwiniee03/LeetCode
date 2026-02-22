@@ -11,7 +11,7 @@ class Solution(object):
 
         for i in nums_set:
             if (i-1 in nums_set):
-                count=0
+                pass
 
             else:
                 next_element= i+1
