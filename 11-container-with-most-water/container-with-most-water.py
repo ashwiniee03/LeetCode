@@ -9,13 +9,10 @@ class Solution(object):
         j= len(height)-1
         area=0
 
-        while (i<=j):
+        while (i<j):
             area= max ((min(height[i], height[j])* (j-i)) , area)
 
             if (height[i]< height[j]):
-                i+=1
-
-            elif ( height[i]== height[j]):
                 i+=1
 
             else:
