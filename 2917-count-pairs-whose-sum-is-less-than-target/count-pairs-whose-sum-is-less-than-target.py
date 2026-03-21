@@ -9,17 +9,19 @@ class Solution(object):
         arr= sorted(nums)
         j= n-1
         count =0
+        i=0
 
-        for i in range(n):
-            j= n-1
-
-            while ((arr[i]+ arr[j]) >= target and j>i ):
+        while (i<j):
+            if (arr[i]+arr[j]>=target):
                 j-=1
 
-            if (arr[i]+ arr[j] < target):
-                count += j-i
+            else:
+                count+= j-i
+                i+=1
 
         return count
+
+        
 
 
         
