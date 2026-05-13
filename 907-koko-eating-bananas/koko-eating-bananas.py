@@ -3,7 +3,7 @@ import math
 def calculate_hours(piles, mid):
         h=0
         for i in piles:
-            h+= math.ceil(float(i)/mid)
+            h += (i + mid - 1) // mid
 
         return h
 
